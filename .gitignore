@@ -1,3 +1,12 @@
+## Allowed Files
+out/*
+!out/CoverLetter.pdf
+
+## IDE files:
+*.idea
+*.swp
+.DS_Store
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

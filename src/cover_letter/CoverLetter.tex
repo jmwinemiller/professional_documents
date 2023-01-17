@@ -1,0 +1,45 @@
+%! Author = jordanwinemiller
+%! Date = 1/12/2023
+
+% Preamble
+\documentclass[11pt, oneside, letterpaper, titlepage]{article}
+
+% Packages
+\usepackage{../style_package/pagelyt}
+
+% Document
+\begin{document}
+    \sidebar{sideBarColor!25}
+    \simpleHeader
+    {titleBackColor}
+    {FirstName}
+    {LastName}
+    {Job Title}
+    {white}
+
+% Start Minipages
+    \vspace*{1.5 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{2.25 in}
+            \vspace*{0.15 in}
+
+            % Contact Section
+            \ruleline{\textbf{Contact}}
+            \vspace*{-0.15 in}
+            \input{sidebar_section/contact_information.tex}
+
+            \vspace*{6.25 in}
+
+            % QR Code
+            \ruleline{\textbf{Download My Resume}}
+            \input{sidebar_section/qr_code.tex}
+
+    \end{minipage}}
+    \hspace*{0.55 in}
+%% Main Letter
+    \adjustbox{valign=t}{
+        \begin{minipage}{5.05 in}
+            \vspace*{0.15 in}
+            \input{introduction.tex}
+    \end{minipage}}
+\end{document}

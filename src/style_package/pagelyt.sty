@@ -1,0 +1,104 @@
+% Uses the 'base' package to create the basic formatting for the document
+\usepackage{../style_package/base}
+
+% Title Page Header
+\newcommand{\simpleHeader}[5]{
+% input: background_color, first_name, last_name, title, font_color
+    \tikz[remember picture, overlay] {
+        \node[
+            rectangle,
+            fill=#1,
+            anchor=north,
+            minimum width=\paperwidth,
+            minimum height=1.25 in](header) at (current page.north){};
+        \node[
+            draw=none,
+            align=left](name) at (header){
+                {\Huge  \color{#5} \textbf{#2} \textbf{#3}}};
+        \node[
+            draw=none,
+            below](description) at (name.south){
+                \color{#5}#4};
+    }
+    \vspace{-0.27 in}
+}
+
+% New Page Header
+\newcommand{\newPageHeader}[5]{
+% input: background_color, first_name, last_name, title, font_color
+    \tikz[remember picture, overlay]{
+        \node[
+            rectangle,
+            fill=#1,
+            anchor=north,
+            minimum width=\paperwidth,
+            minimum height=0.5 in](header) at (current page.north){};
+    }
+    \vspace{-0.25 in}
+    \begin{tcolorbox}[
+        colback=#1,
+        boxsep=0 pt,
+        boxrule=0 pt,
+        toprule=0 pt,
+        arc=0 pt,
+        frame empty,
+        interior hidden]
+        \large \textcolor{#5}
+        {\textbf{#2} \textbf{#3}}
+        \hspace*{\fill}
+        \large \textcolor{#5}
+        {\textbf{#4}}
+    \end{tcolorbox}
+}
+
+% Sidebar Layout
+\newcommand{\sidebar}[1]{
+% input: background_color
+    \tikz[remember picture, overlay]{
+        \node[
+            rectangle,
+            fill=#1,
+            anchor=north west,
+            minimum width=2.85 in,
+            minimum height=\paperheight](header) at (current page.north west){};
+    }
+    \vspace{-0.025 in}
+}
+
+% Format of the title section in the side column
+% based on https://tex.stackexchange.com/questions/65731
+\makeatletter
+\def\cv@hrulefill{{\color{titleBackColor}\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}}
+% line before and after text (some tweaking is required here)
+% based on https://tex.stackexchange.com/questions/15119
+\NewDocumentCommand{\ruleline}{m}{\par\noindent\raisebox{\baselineskip/4}{\makebox[\linewidth]{\cv@hrulefill\hspace{1ex}\raisebox{-\baselineskip/4}{\large #1}\hspace{1ex}\cv@hrulefill}}\vspace*{0.05cm}}
+\makeatother
+
+% Format of the section titles
+\usepackage{titlesec} % Allows creating custom \sidebar_sections
+\titleformat{\section}{
+    \normalfont\Large\bfseries}{}{0em}{}[{\color{titleBackColor}\titlerule[1.0 pt]}]
+% smallcaps, Large, continuous line - looks better if two columns,
+% might look a bit too dramatic if just one ;)
+\titlespacing{\section}{0pt}{5pt}{5pt}
+% \titlespacing{\section}{0pt}{12pt}{5pt}
+% Spacing around titles {<left spacing>}{<before spacing>}{<after spacing>}
+% based on https://tex.stackexchange.com/questions/84061
+
+% Format custom vertical lines
+\newcommand{\VertLine}{
+        {\color{titleBackColor}\vrule width 1.0 pt}
+}
+
+% Format custom vertical lines
+\usepackage{enumitem}
+\newcommand{\ExperienceList}{
+    \setlist[itemize]{
+        wide=0 pt,
+        label=\color{titleBackColor}\textbullet,
+        noitemsep,
+        topsep=2 pt,
+        leftmargin=*
+    }
+}
+% based on https://tex.stackexchange.com/questions/300507

@@ -1,0 +1,71 @@
+% Uses the 'tcolorbox' package to create most of the formatting
+% Documentation at https://texdoc.org/serve/tcolorbox.pdf/0
+\usepackage[most]{tcolorbox}
+
+% Uses the 'geometry' package to set the margins of the page
+% Documentation at https://texdoc.org/serve/geometry.pdf/0
+\usepackage{geometry}
+\geometry{
+    paper=letterpaper,
+    left=0.025 in,
+    right=0.025 in,
+    top=0.025 in,
+    bottom=0.025 in
+}
+
+% Uses the 'fontenc' package for fonts
+\usepackage[TU]{fontenc}
+
+% Uses the below packages for custom awesome icons
+\usepackage{academicons}
+\usepackage{fontawesome}
+% \usepackage{fontawesome5}
+
+% Uses the 'tikz' package for advanced drawing
+\usepackage{tikz}
+\tikzset{
+    contactIcon/.style={
+        minimum height=\baselineskip
+    }
+}
+
+% Uses the 'graphicx' package for pictures
+\usepackage{graphicx}
+
+% Uses 'graphbox' to loads graphicx, and provides align=center for
+% vertical alignment with respect to text
+\RequirePackage{graphbox}
+
+% Uses 'calc' package for more advanced expressions in \setLength
+\usepackage{calc}
+
+% Uses 'amsmath' package for matrix layouts
+\usepackage{amsmath}
+
+% Uses 'hyperref' package for hyperlink settings
+\usepackage[hidelinks]{hyperref}
+
+% Uses 'xcolor' package to define colors using Hex color codes
+% Documentation at https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf
+\RequirePackage{color}
+\RequirePackage{xcolor}
+\definecolor{titleBackColor}{HTML}{404040}
+\definecolor{sideBarColor}{HTML}{999999}
+
+% Miscellaneous pack
+%% Dummy text for placeholdersages
+\usepackage{lipsum}
+
+%% Better alignment of the text
+\usepackage{adjustbox}
+
+% Multiple Column Package
+\usepackage{multicol}
+
+% Generate QR Code from a link
+\usepackage{qrcode}
+
+% Info
+\title{Resume Template}
+\date{01/05/2023}
+\author{jordan.winemiller}
