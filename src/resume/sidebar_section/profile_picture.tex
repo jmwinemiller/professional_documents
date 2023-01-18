@@ -1,0 +1,17 @@
+%! Author = jordanwinemiller
+%! Date = 1/17/2023
+
+% Document
+\begin{center}
+    \begin{tikzpicture}
+        \node[
+        circle,
+        minimum size=\cvPictureWidth,
+        path picture={
+            \node at (path picture bounding box.center){
+                \includegraphics[width=\cvPictureWidth]{recaman_one_color.png}
+            };
+        }]
+            {};
+    \end{tikzpicture}
+\end{center}

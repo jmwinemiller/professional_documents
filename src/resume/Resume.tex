@@ -1,0 +1,70 @@
+%! Author = jordanwinemiller
+%! Date = 1/17/2023
+
+% Preamble
+\documentclass[11 pt, oneside, letterpaper, titlepage]{article}
+
+% Packages
+\usepackage{../style_package/resume}
+
+% Folder Paths
+\graphicspath{{../graphics/}}
+
+% Document
+\begin{document}
+    \sidebar{sideBarColor!25}
+    \simpleHeader
+    {titleBackColor}
+    {FirstName}
+    {LastName}
+    {Job Title}
+    {white}
+
+% Start Minipages
+    \vspace*{1.25 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{2.25 in}
+            \vspace*{0.15 in}
+
+            % Picture
+            \input{sidebar_section/profile_picture.tex}
+
+            % Contact
+            \ruleline{\textbf{Contact}}
+            \vspace*{-0.15 in}
+            \input{sidebar_section/contact_information.tex}
+
+            \vspace*{0.05 in}
+
+            % Soft Skills
+            \ruleline{\textbf{Soft Skills}}
+            \vspace*{-0.35 in}
+            \input{sidebar_section/soft_skills.tex}
+
+            \vspace*{0.05 in}
+
+            % QR Code Resume
+            \ruleline{\textbf{Download My Resume}}
+            \input{sidebar_section/qr_code.tex}
+
+    \end{minipage}}
+%% Main Section
+    \hspace*{0.45 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{5.05 in}
+            \vspace*{0.25 in}
+
+            % Professional Experience
+            \section*{{\faSuitcase} \textsc{Professional Experience}}
+            \input{main_section/experience.tex}
+
+            % Education Main
+            \section*{{\faGraduationCap} \textsc{Education}}
+            \input{main_section/education.tex}
+
+            % Technology Summary
+            \section*{{\faDatabase} \textsc{Technology Summary}}
+            \input{main_section/technology_summary.tex}
+
+    \end{minipage}}
+\end{document}

@@ -1,6 +1,7 @@
 ## Allowed Files
 out/*
 !out/CoverLetter.pdf
+!out/Resume.pdf
 
 ## IDE files:
 *.idea

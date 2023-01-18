@@ -1,0 +1,25 @@
+%! Author = jordanwinemiller
+%! Date = 1/17/2023
+
+% Document
+\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+    \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        \node{\faEnvelopeO};
+        & \node{\href{mailto:yourEmail@gmail.com}
+        {your@email.com}};\\
+        \node{\faPhone};
+        & \node{XXX-XXX-XXXX};\\
+        \node{\faMapMarker};
+        & \node{Location, USA XXXXX};\\
+        \node{\faLinkedin};
+        & \node{\href{https://linkedin.com/}
+        {LinkedIn\_Link}};\\
+        \node{\faGithub};
+        & \node{\href{http://github.com/}
+        {Github\_Link}};\\
+    };
+\end{tikzpicture}

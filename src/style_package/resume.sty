@@ -1,0 +1,236 @@
+% Uses the 'base' package to create the basic formatting for the document
+\usepackage{../style_package/base}
+\usepackage{../style_package/pagelyt}
+
+% Profile Picture
+% Define Lengths
+\newlength\cvPictureWidth
+\setlength\cvPictureWidth{1.5 in}
+
+% CV tag for skills
+\newcommand{\cvtag}[1]{%
+    \tikz[baseline]
+    \node[
+        anchor=base,
+        draw=black!30,
+        rounded corners,
+        inner xsep=0.75ex,
+        inner ysep =0.75ex,
+        text height=1.0ex,
+        text depth=0.12ex]
+    {\footnotesize #1};
+}
+
+% Professional Summary
+\newcommand{\Summary}[1]{
+%\adjustbox{valign=t}{
+    \begin{minipage}{5.05 in}
+        \small {#1}
+    \end{minipage}
+%}
+}
+
+% Profession Experience
+\newcommand{\Experience}[6]{
+% input: start_date, end_date, title, city, company, description_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.1 in}
+            \begin{center}
+            {\footnotesize \bfseries #2 \\ from \\ #1}
+                \vspace*{0.04 in}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{3.7 in}
+        {\normalsize \bfseries #3}
+            \hfill
+            {\footnotesize\faMapMarker  ~ #4}
+            \newline
+            \small
+            {\emph{#5}}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \footnotesize {#6}
+        \end{minipage}
+    }
+}
+
+% Profession Experience Continuation
+\newcommand{\ExperienceExpanded}[1]{
+% input: description_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.1 in}
+            \begin{center}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{3.7 in}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \footnotesize {#1}
+        \end{minipage}
+    }
+}
+
+% Education Sections
+% Education with extra information
+\newcommand{\EducationExtra}[7]{
+% input: date, logo, degree, specialization, university, city, extra information
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.1 in}
+            \begin{center}
+            {\small \bfseries #1} \\
+            \vspace*{0.05 in}
+            \includegraphics[width=0.6 in]{#2}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{3.7 in}
+        {\small \bfseries #3}
+            \hfill
+            {\footnotesize \faMapMarker ~ #6}
+            \newline
+            {\small \bfseries {#4}}
+            \newline
+            {\small \bfseries \emph{#5}}
+            \newline
+            \small
+            {\emph{#7}}
+        \end{minipage}
+    }
+}
+
+% Education
+\newcommand{\Education}[6]{
+% input: date, logo, degree, specialization, university, city
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.1 in}
+            \begin{center}
+            {\small \bfseries #1} \\
+            \vspace*{0.05 in}
+            \includegraphics[width=0.6 in]{#2}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{3.7 in}
+        {\small \bfseries #3}
+            \hfill
+            {\footnotesize \faMapMarker ~ #6}
+            \newline
+            {\small \bfseries {#4}}
+            \newline
+            {\small \bfseries \emph{#5}}
+        \end{minipage}
+    }
+}
+
+% Education Sidebar with extra information
+\newcommand{\EducationSidebarExtra}[6]{
+% input: date, degree, specialization, university, city, extra information
+    \begin{minipage}{2.25 in}
+    {\small \bfseries #2}
+        \hfill
+        {\small \bfseries #1}
+        \newline
+        {\small \bfseries \emph{#3}}
+        \newline
+        {\footnotesize \emph{#6}}
+        \newline
+        {\small #4}
+        \newline
+        {\footnotesize \faMapMarker ~ #5}
+    \end{minipage}
+}
+
+% Education Sidebar
+\newcommand{\EducationSidebar}[5]{
+% input: date, degree, specialization, university, city
+    \begin{minipage}{2.25 in}
+    {\small \bfseries #2}
+        \hfill
+        {\small \bfseries #1}
+        \newline
+        {\small \bfseries \emph{#3}}
+        \newline
+        {\small #4}
+        \newline
+        {\footnotesize \faMapMarker ~ #5}
+    \end{minipage}
+}
+
+% Professional and Community Affiliations
+\newcommand{\Affiliation}[2]{
+% input: organization, position, start_year, end_year
+    \begin{minipage}{2.25 in}
+    {\footnotesize \bfseries #1}
+        \setlist[itemize]{
+            wide=0 pt,
+            label={},
+            noitemsep,
+            topsep=0 pt,
+            leftmargin=5 pt
+        }
+        {\footnotesize #2}
+    \end{minipage}
+}
+
+% Professional Development
+\newcommand{\Development}[2]{
+% input: Organization, Seminar, Year
+    \adjustbox{valign=t}{
+        \begin{minipage}{5.05 in}
+        {\footnotesize \bfseries #1}
+            \setlist[itemize]{
+                wide=0 pt,
+                label={},
+                noitemsep,
+                topsep=0 pt,
+                leftmargin=0 pt
+            }
+            {\footnotesize #2}
+        \end{minipage}
+    }
+}
+
+% Technology Summary
+\newcommand{\Technology}[2]{
+% input: Specialization Area, Language & Skill Level
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.1 in}
+            \begin{center}
+            {\small \bfseries #1} \\
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{3.7 in}
+            \setlist[itemize]{
+                wide=0 pt,
+                label={},
+                noitemsep,
+                topsep=0 pt,
+                leftmargin=0 pt
+            }
+            {\scriptsize #2}
+        \end{minipage}
+    }
+}
