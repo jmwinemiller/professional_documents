@@ -1,11 +1,10 @@
-% Uses the 'base' package to create the basic formatting for the document
-\usepackage{../style_package/base}
-\usepackage{../style_package/pagelyt}
+% Uses the 'pglyt' package to create the basic formatting for the document
+\usepackage{../style_package/pglyt}
 
 % Profile Picture
 % Define Lengths
-\newlength\cvPictureWidth
-\setlength\cvPictureWidth{1.5 in}
+\newlength\resumePictureWidth
+\setlength\resumePictureWidth{1.5 in}
 
 % CV tag for skills
 \newcommand{\cvtag}[1]{%
@@ -23,7 +22,7 @@
 
 % Professional Summary
 \newcommand{\Summary}[1]{
-%\adjustbox{valign=t}{
+% input: summary_description
     \begin{minipage}{5.05 in}
         \small {#1}
     \end{minipage}
@@ -46,7 +45,7 @@
         \begin{minipage}{3.7 in}
         {\normalsize \bfseries #3}
             \hfill
-            {\footnotesize\faMapMarker  ~ #4}
+            {\footnotesize\faMapMarker ~ #4}
             \newline
             \small
             {\emph{#5}}
@@ -89,7 +88,7 @@
 % Education Sections
 % Education with extra information
 \newcommand{\EducationExtra}[7]{
-% input: date, logo, degree, specialization, university, city, extra information
+% input: date, logo, degree, specialization, university, city, extra_information
     \adjustbox{valign=t}{
         \begin{minipage}{1.1 in}
             \begin{center}

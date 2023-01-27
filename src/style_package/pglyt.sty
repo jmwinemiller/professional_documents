@@ -34,7 +34,7 @@
             minimum width=\paperwidth,
             minimum height=0.5 in](header) at (current page.north){};
     }
-    \vspace{-0.25 in}
+    \vspace{-0.125 in}
     \begin{tcolorbox}[
         colback=#1,
         boxsep=0 pt,
@@ -51,6 +51,22 @@
     \end{tcolorbox}
 }
 
+% Title Page Header With Picture
+\newcommand{\pictureHeader}[2]{
+% input: background_color, header_image
+    \tikz[remember picture, overlay] {
+        \node[
+            rectangle,
+            fill=#1,
+            anchor=north,
+            minimum width=\paperwidth,
+            minimum height=1.25 in](header) at (current page.north){};
+    }
+    \vspace{-0.27 in}
+    \hspace*{-0.36 in}
+    \includegraphics[width=\paperwidth]{#2}
+}
+
 % Sidebar Layout
 \newcommand{\sidebar}[1]{
 % input: background_color
@@ -64,6 +80,25 @@
     }
     \vspace{-0.025 in}
 }
+
+% Under Header Layout
+\newcommand{\underHeader}[1]{
+% input: background_color, header_image
+    \tikz[remember picture, overlay]{
+        \node[
+            rectangle,
+            fill=#1,
+            anchor=north,
+            minimum width=\paperwidth,
+            minimum height=3.3 in](header) at (current page.north){};
+    }
+    \vspace{0.25 in}
+}
+
+% Profile Picture
+% Define Lengths
+\newlength\cvPictureWidth
+\setlength\cvPictureWidth{1.5 in}
 
 % Format of the title section in the side column
 % based on https://tex.stackexchange.com/questions/65731

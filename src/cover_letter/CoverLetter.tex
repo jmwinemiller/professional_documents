@@ -5,20 +5,18 @@
 \documentclass[11pt, oneside, letterpaper, titlepage]{article}
 
 % Packages
-\usepackage{../style_package/pagelyt}
+\usepackage{../style_package/pglyt}
 
 % Document
 \begin{document}
     \sidebar{sideBarColor!25}
-    \simpleHeader
+    \pictureHeader
     {titleBackColor}
-    {FirstName}
-    {LastName}
-    {Job Title}
-    {white}
+    {../graphics/header_image.png}
+
 
 % Start Minipages
-    \vspace*{1.5 in}
+    \vspace*{0.5 in}
     \adjustbox{valign=t}{
         \begin{minipage}{2.25 in}
             \vspace*{0.15 in}
@@ -28,7 +26,7 @@
             \vspace*{-0.15 in}
             \input{sidebar_section/contact_information.tex}
 
-            \vspace*{6.25 in}
+            \vspace*{5.25 in}
 
             % QR Code
             \ruleline{\textbf{Download My Resume}}

@@ -1,0 +1,129 @@
+% Uses the 'pglyt' package to create the basic formatting for the document
+\usepackage{../style_package/pglyt}
+
+% Profile Picture
+% Define Lengths
+% \newlength\cvPictureWidth
+% \setlength\cvPictureWidth{1.5 in}
+
+% Professional Summary
+\newcommand{\Summary}[1]{
+% input: summary_description
+    \begin{minipage}{7.75 in}
+        \normalsize {#1}
+    \end{minipage}
+}
+
+% Education Sections
+% Education with extra information
+\newcommand{\EducationExtra}[7]{
+% input: date, logo, degree, specialization, university, city, extra_information
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            {\normalsize \bfseries #1} \\
+                \vspace*{0.05 in}
+                \includegraphics[width=0.75 in]{#2}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\normalsize \bfseries #3}
+            \hfill
+            {\small \faMapMarker ~ #6}
+            \newline
+            {\normalsize \bfseries #4}
+            \newline
+            {\normalsize \bfseries \emph{#5}}
+            \newline
+            {\normalsize \emph{#7}}
+        \end{minipage}
+    }
+}
+
+% Education
+\newcommand{\Education}[6]{
+% input: date, logo, degree, specialization, university, city
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            {\normalsize \bfseries #1}
+                \vspace*{0.05 in}
+                \includegraphics[width=0.75 in]{#2}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\normalsize \bfseries #3}
+            \hfill
+            {\small \faMapMarker ~ #6}
+            \newline
+            {\normalsize \bfseries #4}
+            \newline
+            {\normalsize \bfseries \emph{#5}}
+        \end{minipage}
+    }
+}
+
+% Professional Experience
+\newcommand{\Experience}[6]{
+% input: start_date, end_date, title, city, company, description_list,
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            {\small \bfseries #2 \\ from \\ #1}
+            \end{center}
+        \end{minipage}
+    }
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\large \bfseries #3}
+            \hfill
+            {\small \faMapMarker ~ #4}
+            \newline
+            {\normalsize \emph{#5}}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#6}
+        \end{minipage}
+    }
+}
+
+% Professional Experience Continuation
+\newcommand{\ExperienceExpanded}[1]{
+% input: description_list, bullet_color
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            \end{center}
+        \end{minipage}
+    }
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#1}
+        \end{minipage}
+    }
+}
+
+% Technology Summary
+% \newcommand{\Technology}[]{}
+
+
+
+
