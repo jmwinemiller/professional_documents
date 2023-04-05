@@ -2,6 +2,7 @@
 out/*
 !out/CoverLetter.pdf
 !out/Resume.pdf
+!out/CV.pdf
 
 ## IDE files:
 *.idea

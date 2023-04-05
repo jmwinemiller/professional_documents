@@ -1,0 +1,200 @@
+%! Author = jordanwinemiller
+%! Date = 1/24/2023
+
+% Preamble
+\documentclass[11pt, onside, letterpaper, titlepage]{article}
+
+% Packages
+\usepackage{../style_package/cv}
+
+% Folder Paths
+\graphicspath{{../graphics/}}
+
+% Document
+\begin{document}
+    \underHeader{sideBarColor!25}
+    \pictureHeader
+    {titleBackColor}
+    {../graphics/header_image.png}
+
+% Start Minipage Under Header
+    \vspace*{-0.75 in}
+    \hspace*{-0.45 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{\paperwidth}
+            \begin{flushleft}
+                \begin{tikzpicture}
+                    \node[
+                    circle,
+                    minimum size=\cvPictureWidth,
+                    path picture={
+                        \node at (path picture bounding box.center){
+                            \includegraphics[width=\cvPictureWidth
+                            ]{profile_picture_2_reduced}
+                        };
+                    }]
+                        {};
+                    \hspace*{6.0 in}
+                    % \vspace*{2.25 in}
+                    [every node/.style={inner sep=0pt, outer sep=0pt}]
+                    \small
+                    \matrix [
+                        column 1/.style={anchor=center,contactIcon},
+                        column 2/.style={anchor=west,align=left,contactIcon},
+                        column sep=5pt,
+                        row sep=-2pt] (contact) {
+                        \node{};\\[0.4 in]
+                        \node{\faEnvelopeO};
+                        & \node{\underline{\href{mailto:jordanwinemiller@gmail.com}
+                        {jordanwinemiller@gmail.com}}};\\
+                        \node{\faPhone};
+                        & \node{913-620-7648};\\
+                        \node{\faMapMarker};
+                        & \node{Kansas City, MO 64108};\\
+                        \node{\faLinkedin};
+                        & \node{\underline{\href{https://linkedin.com/in/jordan-winemiller}
+                        {jordan-winemiller}}};\\
+                        \node{\faGithub};
+                        & \node{\underline{\href{http://github.com/jmwinemiller}
+                        {jmwinemiller}}};\\
+                    };
+                \end{tikzpicture}
+
+            \end{flushleft}
+        \end{minipage}
+    }
+    \hspace*{0.25 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{7.75 in}
+            \vspace*{0.25 in}
+
+            % Professional Summary
+            \section*{{\faUser} \textsc{Professional Summary}}
+            \input{sections/professional_summary}
+
+            \input{sections/qr_download}
+
+            \vspace*{-0.175 in}
+            % Professional Experience
+            \section*{{\faSuitcase} \textsc{Professional Experience}}
+            \input{sections/project_experience_1}
+
+        \end{minipage}
+    }
+
+    \pageFooter
+
+    % Page 2
+    \newpage
+
+    \newPageHeader
+    {titleBackColor}
+    {Jordan}
+    {Winemiller}
+    {Senior Data Scientist}
+    {white}
+
+    \hspace*{-0.01 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{7.75 in}
+            \vspace*{0.15 in}
+
+            % Professional Experience Continued
+            \input{sections/project_experience_2}
+
+        \end{minipage}
+    }
+
+    \pageFooter
+
+    % Page 3
+    \newpage
+
+    \newPageHeader
+    {titleBackColor}
+    {Jordan}
+    {Winemiller}
+    {Senior Data Scientist}
+    {white}
+
+    \hspace*{-0.01 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{7.75 in}
+            \vspace*{0.15 in}
+
+            % Professional Experience Continued
+            \input{sections/project_experience_3}
+
+        \end{minipage}
+    }
+
+    \pageFooter
+
+    % Page 4
+    \newpage
+
+    \newPageHeader
+    {titleBackColor}
+    {Jordan}
+    {Winemiller}
+    {Senior Data Scientist}
+    {white}
+
+    \hspace*{-0.01 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{7.75 in}
+            \vspace*{0.15 in}
+
+            % Professional Experience Continued
+            \input{sections/project_experience_4}
+
+            % Education
+            \section*{{\faGraduationCap} \textsc{Education}}
+            \input{sections/education}
+
+            % Technology Summary
+            \section*{{\faLaptop} \textsc{Technology Summary}}
+            \input{sections/technology_summary}
+
+            % Competencies
+            \section*{{\faGears} \textsc{Competencies}}
+            \input{sections/competencies}
+
+        \end{minipage}
+    }
+
+    \pageFooter
+
+    % Page 5
+    \newpage
+
+    \newPageHeader
+    {titleBackColor}
+    {Jordan}
+    {Winemiller}
+    {Senior Data Scientist}
+    {white}
+
+    \hspace*{-0.01 in}
+    \adjustbox{valign=t}{
+        \begin{minipage}{7.75 in}
+            \vspace*{0.15 in}
+
+            % Professional Development
+            \section*{{\faAreaChart} \textsc{Professional Development}}
+            \input{sections/professional_development}
+
+            % Professional Affiliations
+            \section*{{\faInstitution} \textsc{Professional Affiliations}}
+            \input{sections/professional_affiliations}
+
+            % Community Service
+            \section*{{\faCubes} \textsc{Community Service}}
+            \input{sections/community_service}
+
+        \end{minipage}
+    }
+
+    \pageFooter
+
+\end{document}

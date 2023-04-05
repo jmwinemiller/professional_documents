@@ -17,7 +17,7 @@
 % Education Sections
 % Education with extra information
 \newcommand{\EducationExtra}[7]{
-% input: date, logo, degree, specialization, university, city, extra_information
+% input: date, logos, degree, specialization, university, city, extra_information
     \adjustbox{valign=t}{
         \begin{minipage}{1.5 in}
             \begin{center}
@@ -45,7 +45,7 @@
 
 % Education
 \newcommand{\Education}[6]{
-% input: date, logo, degree, specialization, university, city
+% input: date, logos, degree, specialization, university, city
     \adjustbox{valign=t}{
         \begin{minipage}{1.5 in}
             \begin{center}
@@ -69,9 +69,60 @@
     }
 }
 
+% Education with extra information and no date
+\newcommand{\EducationExtraNoDate}[6]{
+% input: logos, degree, specialization, university, city, extra_information
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+                \vspace*{0.05 in}
+                \includegraphics[width=0.75 in]{#1}
+            \end{center}
+        \end{minipage}
+    }
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\normalsize \bfseries #2}
+            \hfill
+            {\small \faMapMarker ~ #5}
+            \newline
+            {\normalsize \bfseries #3}
+            \newline
+            {\normalsize \bfseries \emph{#4}}
+            \newline
+            {\normalsize \emph{#6}}
+        \end{minipage}
+    }
+}
+
+% Education with no date
+\newcommand{\EducationNoDate}[5]{
+% input: logos, degree, specialization, university, city
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+                \vspace*{0.05 in}
+                \includegraphics[width=0.75 in]{#1}
+            \end{center}
+        \end{minipage}
+    }
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\normalsize \bfseries #2}
+            \hfill
+            {\small \faMapMarker ~ #5}
+            \newline
+            {\normalsize \bfseries #3}
+            \newline
+            {\normalsize \bfseries \emph{#4}}
+        \end{minipage}
+    }
+}
+
+
 % Professional Experience
 \newcommand{\Experience}[6]{
-% input: start_date, end_date, title, city, company, description_list,
+% input: start_date, end_date, title, city, company, description_list
     \adjustbox{valign=t}{
         \begin{minipage}{1.5 in}
             \begin{center}
@@ -79,6 +130,7 @@
             \end{center}
         \end{minipage}
     }
+    \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{6.0 in}
         {\large \bfseries #3}
@@ -100,13 +152,14 @@
 
 % Professional Experience Continuation
 \newcommand{\ExperienceExpanded}[1]{
-% input: description_list, bullet_color
+% input: description_list
     \adjustbox{valign=t}{
         \begin{minipage}{1.5 in}
             \begin{center}
             \end{center}
         \end{minipage}
     }
+    \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{6.0 in}
             \setlist[itemize]{
@@ -121,9 +174,403 @@
     }
 }
 
+% Professional Project Experience 3 Section Headers
+\newcommand{\ProjectExperience}[8]{
+% input: start_date, end_date, title, city, company, project_list,
+%     research_list, responsibility_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            {\small \bfseries #2 \\ from \\ #1}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\large \bfseries #3}
+            \hfill
+            {\small \faMapMarker ~ #4}
+            \newline
+            {\normalsize \emph{#5}}
+            \newline
+            {\small \bfseries Projects}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#6}
+            {\small \bfseries Research}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#7}
+            {\small \bfseries Key Responsibilities}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#8}
+        \end{minipage}
+    }
+}
+
+% Professional Project Experience 2 Section Headers (Project and Research)
+\newcommand{\ProjectExperienceTwoSection}[7]{
+% input: start_date, end_date, title, city, company, project_list, research_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            {\small \bfseries #2 \\ from \\ #1}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\large \bfseries #3}
+            \hfill
+            {\small \faMapMarker ~ #4}
+            \newline
+            {\normalsize \emph{#5}}
+            \newline
+            {\small \bfseries Projects}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#6}
+            {\small \bfseries Research}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#7}
+        \end{minipage}
+    }
+}
+
+% Professional Project Experience 1 Section Header (Project)
+\newcommand{\ProjectExperienceOneSection}[6]{
+% input: start_date, end_date, title, city, company, project_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            {\small \bfseries #2 \\ from \\ #1}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\large \bfseries #3}
+            \hfill
+            {\small \faMapMarker ~ #4}
+            \newline
+            {\normalsize \emph{#5}}
+            \newline
+            {\small \bfseries Projects}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#6}
+        \end{minipage}
+    }
+}
+
+% Professional Project Experience Continuation Remainder Research and 1 Section
+% Header (Key Responsibilities)
+\newcommand{\ProjectExperienceExpandedOneSectionCont}[2]{
+% input: description_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#1}
+            {\small \bfseries Key Responibilities}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#2}
+        \end{minipage}
+    }
+}
+
+% Professional Project Experience Continuation 1 Section Header
+% (Key Responsibilities)
+\newcommand{\ProjectExperienceExpandedOneSection}[1]{
+% input: description_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+            {\small \bfseries Key Responibilities}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#1}
+        \end{minipage}
+    }
+}
+
+% Professional Project Experience Continuation Remainder Projects and 2 Section
+% Headers (Research and Key Responsibilities)
+\newcommand{\ProjectExperienceExpandedTwoSectionCont}[3]{
+% input: description_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#1}
+            {\small \bfseries Research}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#2}
+            {\small \bfseries Key Responibilities}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#3}
+        \end{minipage}
+    }
+}
+
+% Professional Project Experience Continuation 2 Section Headers
+% (Research and Key Responsibilities)
+\newcommand{\ProjectExperienceExpandedTwoSection}[2]{
+% input: description_list
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{6.0 in}
+        {\small \bfseries Research}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#1}
+            {\small \bfseries Key Responibilities}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            \small {#2}
+        \end{minipage}
+    }
+}
+
+
 % Technology Summary
-% \newcommand{\Technology}[]{}
+\newcommand{\Technology}[3]{
+% input: Specialization Area, Image, Skill
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+            \begin{center}
+            {\large \bfseries #1} \\
+            \vspace*{0.15 in}
+            {\Huge #2}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \hspace*{-0.1 in}
+        \begin{minipage}{6.0 in}
+            \setlist[itemize]{
+                wide=0 pt,
+                label={},
+                noitemsep,
+                topsep=0 pt,
+                leftmargin=0 pt
+            }
+            {\small #3}
+        \end{minipage}
+    }
+}
 
 
+% Competencies
+\newcommand{\Competencies}[2]{
+% input: Specialization Area, Skill
+    \adjustbox{valign=f}{
+        \begin{minipage}{2.5 in}
+            \begin{center}
+            {\normalsize \bfseries #1} \\
+            \vspace*{-0.025 in}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            {\footnotesize #2}
+            \end{center}
+        \end{minipage}
+    }
+}
 
 
+% Professional Development
+\newcommand{\Development}[2]{
+% input: Organization, Seminar, Year
+    \adjustbox{valign=t}{
+        \begin{minipage}{7.5 in}
+        {\normalsize \bfseries #1}
+            \setlist[itemize]{
+                wide=0 pt,
+                label={},
+                noitemsep,
+                topsep=0 pt,
+                leftmargin=0 pt
+            }
+            {\normalsize #2}
+        \end{minipage}
+    }
+}
+
+
+% Professional Affiliations
+\newcommand{\Affiliation}[2]{
+% input: Organization, Membership, Year
+    \adjustbox{valign=t}{
+        \begin{minipage}{7.5 in}
+        {\normalsize \bfseries #1}
+            \setlist[itemize]{
+                wide=0 pt,
+                label={},
+                noitemsep,
+                topsep=0 pt,
+                leftmargin=0 pt
+            }
+            {\normalsize #2}
+        \end{minipage}
+    }
+}
+
+
+% Community Service
+\newcommand{\Community}[2]{
+% input: Organization, Title, Year
+    \adjustbox{valign=t}{
+    \begin{minipage}{7.5 in}
+    {\normalsize \bfseries #1}
+        \setlist[itemize]{
+            wide=0 pt,
+            label={},
+            noitemsep,
+            topsep=0 pt,
+            leftmargin=0 pt
+        }
+        {\normalsize #2}
+    \end{minipage}
+    }
+}
+
+
+% Awards
+\newcommand{\Awards}[2]{
+% input: Area, Organization, Year
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.5 in}
+        {\normalsize \bfseries #1}
+            \setlist[itemize]{
+                wide=0 pt,
+                label={},
+                noitemsep,
+                topsep=0 pt,
+                leftmargin=0 pt
+            }
+            {\normalsize #2}
+        \end{minipage}
+    }
+}
+
+
+% Custom Page Footer
+\RequirePackage{lastpage}
+\newcommand{\pageFooter}{
+    \vfill
+    \begin{center}
+        \textcolor{titleBackColor}
+        {\small Page \thepage \ of \pageref{LastPage}}
+    \end{center}
+
+}
