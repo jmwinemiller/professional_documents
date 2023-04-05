@@ -42,7 +42,7 @@
                         column 1/.style={anchor=center,contactIcon},
                         column 2/.style={anchor=west,align=left,contactIcon},
                         column sep=5pt,
-                        row sep=-2pt] (contact) {
+                        row sep=-3.5 pt] (contact) {
                         \node{};\\[0.4 in]
                         \node{\faEnvelopeO};
                         & \node{\underline{\href{mailto:jordanwinemiller@gmail.com}
@@ -57,6 +57,9 @@
                         \node{\faGithub};
                         & \node{\underline{\href{http://github.com/jmwinemiller}
                         {jmwinemiller}}};\\
+                        \node{\faHome};
+                        & \node{\underline{\href{https://jwinemiller.shinyapps.io/r_eda_presentation}
+                        {ShinyApp Website}}};\\
                     };
                 \end{tikzpicture}
 
@@ -66,7 +69,7 @@
     \hspace*{0.25 in}
     \adjustbox{valign=t}{
         \begin{minipage}{7.75 in}
-            \vspace*{0.25 in}
+            \vspace*{0.15 in}
 
             % Professional Summary
             \section*{{\faUser} \textsc{Professional Summary}}
@@ -184,10 +187,12 @@
             \section*{{\faAreaChart} \textsc{Professional Development}}
             \input{sections/professional_development}
 
+            \vspace*{0.075 in}
             % Professional Affiliations
             \section*{{\faInstitution} \textsc{Professional Affiliations}}
             \input{sections/professional_affiliations}
 
+            \vspace*{0.075 in}
             % Community Service
             \section*{{\faCubes} \textsc{Community Service}}
             \input{sections/community_service}
