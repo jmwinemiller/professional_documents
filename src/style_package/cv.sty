@@ -70,12 +70,12 @@
 }
 
 % Education with extra information and no date
-\newcommand{\EducationExtraNoDate}[6]{
+\newcommand{\EducationExtraNoDate}[7]{
 % input: logos, degree, specialization, university, city, extra_information
     \adjustbox{valign=t}{
         \begin{minipage}{1.5 in}
             \begin{center}
-                \vspace*{0.05 in}
+                \vspace*{#7}
                 \includegraphics[width=0.75 in]{#1}
             \end{center}
         \end{minipage}
@@ -97,12 +97,12 @@
 }
 
 % Education with no date
-\newcommand{\EducationNoDate}[5]{
-% input: logos, degree, specialization, university, city
+\newcommand{\EducationNoDate}[6]{
+% input: logos, degree, specialization, university, city, logo_spacing
     \adjustbox{valign=t}{
         \begin{minipage}{1.5 in}
             \begin{center}
-                \vspace*{0.05 in}
+                \vspace*{#6}
                 \includegraphics[width=0.75 in]{#1}
             \end{center}
         \end{minipage}
