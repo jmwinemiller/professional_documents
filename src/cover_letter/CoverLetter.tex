@@ -16,28 +16,33 @@
 
 
 % Start Minipages
-    \vspace*{0.5 in}
+    \vspace*{0.35 in}
     \adjustbox{valign=t}{
         \begin{minipage}{2.25 in}
             \vspace*{0.15 in}
 
-            % Contact Section
+            % Contact
             \ruleline{\textbf{Contact}}
             \vspace*{-0.15 in}
-            \input{sidebar_section/contact_information.tex}
+            \input{sidebar_sections/contact_information}
 
-            \vspace*{5.25 in}
-
-            % QR Code
+            \vspace*{3.55 in}
+            % QR Code Resume
             \ruleline{\textbf{Download My Resume}}
-            \input{sidebar_section/qr_code.tex}
+            \input{sidebar_sections/qr_code_resume}
+
+            \vspace*{0.05 in}
+
+            % QR Code CV
+            \ruleline{\textbf{Download My CV}}
+            \input{sidebar_sections/qr_code_cv}
 
     \end{minipage}}
-    \hspace*{0.55 in}
-%% Main Letter
+    \hspace*{0.40 in}
+    %% Main Letter
     \adjustbox{valign=t}{
-        \begin{minipage}{5.05 in}
+        \begin{minipage}{5.10 in}
             \vspace*{0.15 in}
-            \input{introduction.tex}
+            \input{introduction}
     \end{minipage}}
 \end{document}
