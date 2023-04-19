@@ -34,17 +34,20 @@
             \vspace*{-0.15 in}
             \input{sidebar_sections/contact_information}
 
-            \vspace*{0.05 in}
-
-            % Core Competencies
-            \ruleline{\textbf{Core Competencies}}
-            \vspace*{-0.35 in}
-            \input{sidebar_sections/core_competencies}
+            \vspace*{0.15 in}
+            \vspace*{0.15 in}
 
             % Analytical Competencies
             \ruleline{\textbf{Analytical Competencies}}
             \vspace*{-0.35 in}
             \input{sidebar_sections/analytical_competencies}
+
+            \vspace*{0.15 in}
+
+            % Core Competencies
+            \ruleline{\textbf{Core Competencies}}
+            \vspace*{-0.35 in}
+            \input{sidebar_sections/core_competencies}
 
     \end{minipage}} %
     %% Main Section
@@ -84,16 +87,21 @@
         \begin{minipage}{2.25 in}
             \vspace*{0.1 in}
 
+            \vspace*{0.2 in}
+
             % Software Methodologies
             \ruleline{\textbf{Software Methodologies}}
             \vspace*{-0.35 in}
             \input{sidebar_sections/software_methodologies}
+
+            \vspace*{0.15 in}
 
             % Professional Affiliations
             \ruleline{\textbf{Professional Affiliations}}
             \vspace*{-0.15 in}
             \input{sidebar_sections/affiliations}
 
+            \vspace*{0.15 in}
             \vspace*{0.05 in}
 
             % Community Service
@@ -101,13 +109,44 @@
             \vspace*{-0.15 in}
             \input{sidebar_sections/community_service}
 
-            \vspace*{0.05 in}
 
+    \end{minipage}}
+    \hspace*{0.55in}
+    %% Main Section
+    \adjustbox{valign=t}{
+        \begin{minipage}{5.05 in}
+            \vspace*{0.1 in}
+
+            % Professional Experience Continued
+            \input{main_sections/ds_experience_2}
+
+    \end{minipage}}
+% Third Page
+    \newpage
+
+    %% Sidebar Section
+    \sidebar{sideBarColor!25}
+
+    %% Page Header
+    \newPageHeaderResume
+    {titleBackColor}
+    {Jordan}
+    {Winemiller}
+    {Senior Data Scientist}
+    {white}
+
+    \adjustbox{valign=t}{
+        \begin{minipage}{2.25 in}
+            \vspace*{0.1 in}
+
+            \vspace*{0.2 in}
+            
             % QR Code Resume
             \ruleline{\textbf{Download My Resume}}
             \input{sidebar_sections/qr_code_resume}
 
             \vspace*{0.05 in}
+            \vspace*{0.15 in}
 
             % QR Code CV
             \ruleline{\textbf{Download My CV}}
@@ -120,9 +159,6 @@
     \adjustbox{valign=t}{%
         \begin{minipage}{5.05 in}
             \vspace*{0.1 in}
-
-            % Professional Experience Continued
-            \input{main_sections/ds_experience_2}
 
             % Education Main Option
             \section*{{\faGraduationCap} \textsc{Education}}
