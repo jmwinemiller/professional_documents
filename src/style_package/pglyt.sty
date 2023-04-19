@@ -51,6 +51,34 @@
     \end{tcolorbox}
 }
 
+% New Page Header for Resume
+\newcommand{\newPageHeaderResume}[5]{
+% input: background_color, first_name, last_name, title, font_color
+    \tikz[remember picture, overlay]{
+        \node[
+            rectangle,
+            fill=#1,
+            anchor=north,
+            minimum width=\paperwidth,
+            minimum height=0.5 in](header) at (current page.north){};
+    }
+    \vspace{-0.25 in}
+    \begin{tcolorbox}[
+        colback=#1,
+        boxsep=0 pt,
+        boxrule=0 pt,
+        toprule=0 pt,
+        arc=0 pt,
+        frame empty,
+        interior hidden]
+        \large \textcolor{#5}
+        {\textbf{#2} \textbf{#3}}
+        \hspace*{\fill}
+        \large \textcolor{#5}
+        {\textbf{#4}}
+    \end{tcolorbox}
+}
+
 % Title Page Header With Picture
 \newcommand{\pictureHeader}[2]{
 % input: background_color, header_image

@@ -15,9 +15,9 @@
     \sidebar{sideBarColor!25}
     \simpleHeader
     {titleBackColor}
-    {FirstName}
-    {LastName}
-    {Job Title}
+    {Jordan}
+    {Winemiller}
+    {Senior Data Scientist}
     {white}
 
 % Start Minipages
@@ -27,44 +27,115 @@
             \vspace*{0.15 in}
 
             % Picture
-            \input{sidebar_section/profile_picture.tex}
+            \input{sidebar_sections/profile_picture}
 
             % Contact
             \ruleline{\textbf{Contact}}
             \vspace*{-0.15 in}
-            \input{sidebar_section/contact_information.tex}
+            \input{sidebar_sections/contact_information}
 
             \vspace*{0.05 in}
 
-            % Soft Skills
-            \ruleline{\textbf{Soft Skills}}
+            % Core Competencies
+            \ruleline{\textbf{Core Competencies}}
             \vspace*{-0.35 in}
-            \input{sidebar_section/soft_skills.tex}
+            \input{sidebar_sections/core_competencies}
 
-            \vspace*{0.05 in}
+            % Analytical Competencies
+            \ruleline{\textbf{Analytical Competencies}}
+            \vspace*{-0.35 in}
+            \input{sidebar_sections/analytical_competencies}
 
-            % QR Code Resume
-            \ruleline{\textbf{Download My Resume}}
-            \input{sidebar_section/qr_code.tex}
-
-    \end{minipage}}
-%% Main Section
+    \end{minipage}} %
+    %% Main Section
     \hspace*{0.45 in}
     \adjustbox{valign=t}{
         \begin{minipage}{5.05 in}
             \vspace*{0.25 in}
 
+            % Professional Summary
+            \section*{{\faUser} \textsc{Professional Summary}}
+            \input{main_sections/professional_summary}
+
             % Professional Experience
             \section*{{\faSuitcase} \textsc{Professional Experience}}
-            \input{main_section/experience.tex}
+            \input{main_sections/ds_experience_1}
 
-            % Education Main
+            % Education Sidebar Option
+            % \section*{{\faGraduationCap} \textsc{Education}}
+            % \input{main_sections/education.tex}
+
+    \end{minipage}} %
+% Second Page
+    \newpage
+
+    %% Sidebar Section
+    \sidebar{sideBarColor!25}
+
+    %% Page Header
+    \newPageHeaderResume
+    {titleBackColor}
+    {Jordan}
+    {Winemiller}
+    {Senior Data Scientist}
+    {white}
+
+    \adjustbox{valign=t}{
+        \begin{minipage}{2.25 in}
+            \vspace*{0.1 in}
+
+            % Software Methodologies
+            \ruleline{\textbf{Software Methodologies}}
+            \vspace*{-0.35 in}
+            \input{sidebar_sections/software_methodologies}
+
+            % Professional Affiliations
+            \ruleline{\textbf{Professional Affiliations}}
+            \vspace*{-0.15 in}
+            \input{sidebar_sections/affiliations}
+
+            \vspace*{0.05 in}
+
+            % Community Service
+            \ruleline{\textbf{Community Service}}
+            \vspace*{-0.15 in}
+            \input{sidebar_sections/community_service}
+
+            \vspace*{0.05 in}
+
+            % QR Code Resume
+            \ruleline{\textbf{Download My Resume}}
+            \input{sidebar_sections/qr_code_resume}
+
+            \vspace*{0.05 in}
+
+            % QR Code CV
+            \ruleline{\textbf{Download My CV}}
+            \input{sidebar_sections/qr_code_cv}
+
+
+    \end{minipage}}%
+    \hspace*{0.55 in}
+    %% Main Section
+    \adjustbox{valign=t}{%
+        \begin{minipage}{5.05 in}
+            \vspace*{0.1 in}
+
+            % Professional Experience Continued
+            \input{main_sections/ds_experience_2}
+
+            % Education Main Option
             \section*{{\faGraduationCap} \textsc{Education}}
-            \input{main_section/education.tex}
+            \input{main_sections/education_no_date}
 
             % Technology Summary
             \section*{{\faDatabase} \textsc{Technology Summary}}
-            \input{main_section/technology_summary.tex}
+            \input{main_sections/technology_summary}
 
-    \end{minipage}}
+
+            % Certificates
+            \section*{{\faLineChart} \textsc{Professional Development}}
+            \input{main_sections/professional_development}
+
+        \end{minipage}}
 \end{document}

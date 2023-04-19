@@ -26,7 +26,6 @@
     \begin{minipage}{5.05 in}
         \small {#1}
     \end{minipage}
-%}
 }
 
 % Profession Experience
@@ -86,6 +85,32 @@
 }
 
 % Education Sections
+% Education
+\newcommand{\Education}[6]{
+% input: date, logos, degree, specialization, university, city
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.1 in}
+            \begin{center}
+            {\small \bfseries #1} \\
+            \vspace*{0.05 in}
+            \includegraphics[width=0.6 in]{#2}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{3.7 in}
+        {\small \bfseries #3}
+            \hfill
+            {\footnotesize \faMapMarker ~ #6}
+            \newline
+            {\small \bfseries {#4}}
+            \newline
+            {\small \bfseries \emph{#5}}
+        \end{minipage}
+    }
+}
+
 % Education with extra information
 \newcommand{\EducationExtra}[7]{
 % input: date, logos, degree, specialization, university, city, extra_information
@@ -115,30 +140,73 @@
     }
 }
 
-% Education
-\newcommand{\Education}[6]{
-% input: date, logos, degree, specialization, university, city
+% Education with no date
+\newcommand{\EducationNoDate}[6]{
+% input: logos, degree, specialization, university, city, logo_spacing
     \adjustbox{valign=t}{
         \begin{minipage}{1.1 in}
             \begin{center}
-            {\small \bfseries #1} \\
-            \vspace*{0.05 in}
-            \includegraphics[width=0.6 in]{#2}
+                \vspace*{#6}
+                \includegraphics[width=0.6 in]{#1}
             \end{center}
         \end{minipage}
     }
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
-        {\small \bfseries #3}
+        {\small \bfseries #2}
             \hfill
-            {\footnotesize \faMapMarker ~ #6}
+            {\footnotesize \faMapMarker ~ #5}
             \newline
-            {\small \bfseries {#4}}
+            {\small \bfseries #3}
             \newline
-            {\small \bfseries \emph{#5}}
+            {\small \bfseries \emph{#4}}
         \end{minipage}
     }
+}
+
+% Education with extra information and no date
+\newcommand{\EducationExtraNoDate}[7]{
+% input: logos, degree, specialization, university, city, extra_information,
+%     logo_spacing
+    \adjustbox{valign=t}{
+        \begin{minipage}{1.1 in}
+            \begin{center}
+                \vspace*{#7}
+                \includegraphics[width=0.6 in]{#1}
+            \end{center}
+        \end{minipage}
+    }
+    \VertLine
+    \adjustbox{valign=t}{
+        \begin{minipage}{3.7 in}
+        {\small \bfseries #2}
+            \hfill
+            {\footnotesize \faMapMarker ~ #5}
+            \newline
+            {\small \bfseries #3}
+            \newline
+            {\small \bfseries \emph{#4}}
+            \newline
+            {\small \emph{#6}}
+        \end{minipage}
+    }
+}
+
+% Education Sidebar
+\newcommand{\EducationSidebar}[5]{
+% input: date, degree, specialization, university, city
+    \begin{minipage}{2.25 in}
+    {\small \bfseries #2}
+        \hfill
+        {\small \bfseries #1}
+        \newline
+        {\small \bfseries \emph{#3}}
+        \newline
+        {\small #4}
+        \newline
+        {\footnotesize \faMapMarker ~ #5}
+    \end{minipage}
 }
 
 % Education Sidebar with extra information
@@ -152,22 +220,6 @@
         {\small \bfseries \emph{#3}}
         \newline
         {\footnotesize \emph{#6}}
-        \newline
-        {\small #4}
-        \newline
-        {\footnotesize \faMapMarker ~ #5}
-    \end{minipage}
-}
-
-% Education Sidebar
-\newcommand{\EducationSidebar}[5]{
-% input: date, degree, specialization, university, city
-    \begin{minipage}{2.25 in}
-    {\small \bfseries #2}
-        \hfill
-        {\small \bfseries #1}
-        \newline
-        {\small \bfseries \emph{#3}}
         \newline
         {\small #4}
         \newline
@@ -233,3 +285,4 @@
         \end{minipage}
     }
 }
+

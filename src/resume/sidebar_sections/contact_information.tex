@@ -1,0 +1,28 @@
+%! Author = jordanwinemiller
+%! Date = 12/28/22
+
+% Document
+\begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+    \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactIcon},
+        column sep=3 pt,
+        row sep=5pt] (contact) {
+        \node{\faEnvelopeO};
+        & \node{\underline{\href{mailto:jordanwinemiller@gmail.com}
+        {jordanwinemiller@gmail.com}}};\\
+        \node{\faPhone};
+        & \node{913-620-7648};\\
+        \node{\faMapMarker};
+        & \node{Kansas City, MO 64108};\\
+        \node{\faLinkedin};
+        & \node{\underline{\href{https://linkedin.com/in/jordan-winemiller}
+        {jordan-winemiller}}};\\
+        \node{\faGithub};
+        & \node{\underline{\href{http://github.com/jmwinemiller}
+        {jmwinemiller}}};\\
+        \node{\faHome};
+        & \node{\underline{\href{https://jmwinemiller.github.io/}
+        {Portfolio Website}}};\\
+    };
+\end{tikzpicture}
