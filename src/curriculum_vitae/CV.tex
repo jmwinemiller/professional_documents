@@ -24,15 +24,15 @@
         \begin{minipage}{\paperwidth}
             \begin{flushleft}
                 \begin{tikzpicture}
-%                    \node[
-%                    circle,
-%                    minimum size=\cvPictureWidth,
-%                    path picture={
-%                        \node at (path picture bounding box.center){
-%                            \includegraphics[width=\cvPictureWidth
-%                            ]{profile_picture_2_reduced}
-%                        };
-%                    }]
+                    \node[
+                    circle,
+                    minimum size=\cvPictureWidth,
+                    path picture={
+                        \node at (path picture bounding box.center){
+                            \includegraphics[width=\cvPictureWidth
+                            ]{profile_picture_2_reduced}
+                        };
+                    }]
                         {};
                     \hspace*{6.0 in}
                     % \vspace*{2.25 in}
@@ -182,6 +182,9 @@
     \adjustbox{valign=t}{
         \begin{minipage}{7.75 in}
             \vspace*{0.15 in}
+
+            % Competencies Continued
+            \input{sections/competencies_continued}
 
             % Professional Development
             \section*{{\faLineChart} \textsc{Professional Development}}

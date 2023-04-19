@@ -83,13 +83,13 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{6.0 in}
-        {\normalsize \bfseries #2}
+        {\large \bfseries #2}
             \hfill
             {\small \faMapMarker ~ #5}
             \newline
-            {\normalsize \bfseries #3}
+            {\large \bfseries #3}
             \newline
-            {\normalsize \bfseries \emph{#4}}
+            {\large \bfseries \emph{#4}}
             \newline
             {\normalsize \emph{#6}}
         \end{minipage}
@@ -110,13 +110,13 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{6.0 in}
-        {\normalsize \bfseries #2}
+        {\large \bfseries #2}
             \hfill
             {\small \faMapMarker ~ #5}
             \newline
-            {\normalsize \bfseries #3}
+            {\large \bfseries #3}
             \newline
-            {\normalsize \bfseries \emph{#4}}
+            {\large \bfseries \emph{#4}}
         \end{minipage}
     }
 }
@@ -483,7 +483,27 @@
                 topsep=1 pt,
                 leftmargin=*
             }
-            {\footnotesize #2}
+            {\small #2}
+            \end{center}
+        \end{minipage}
+    }
+}
+
+
+% Competencies Continued
+\newcommand{\CompetenciesContinued}[1]{
+% input: Specialization Area, Skill
+    \adjustbox{valign=f}{
+        \begin{minipage}{2.5 in}
+            \begin{center}
+            \setlist[itemize]{
+                wide=0 pt,
+                label=\color{titleBackColor}\textbullet,
+                noitemsep,
+                topsep=1 pt,
+                leftmargin=*
+            }
+            {\small #1}
             \end{center}
         \end{minipage}
     }
