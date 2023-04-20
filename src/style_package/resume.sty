@@ -24,7 +24,9 @@
 \newcommand{\Summary}[1]{
 % input: summary_description
     \begin{minipage}{5.05 in}
+        \begin{flushleft}
         \small {#1}
+        \end{flushleft}
     \end{minipage}
 }
 
@@ -42,6 +44,7 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
+        \begin{flushleft}
         {\normalsize \bfseries #3}
             \hfill
             {\footnotesize\faMapMarker ~ #4}
@@ -56,6 +59,7 @@
                 leftmargin=*
             }
             \footnotesize {#6}
+        \end{flushleft}
         \end{minipage}
     }
 }
@@ -72,6 +76,7 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
+            \begin{flushleft}
             \setlist[itemize]{
                 wide=0 pt,
                 label=\color{titleBackColor}\textbullet,
@@ -80,6 +85,7 @@
                 leftmargin=*
             }
             \footnotesize {#1}
+            \end{flushleft}
         \end{minipage}
     }
 }
@@ -100,6 +106,7 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
+        \begin{flushleft}
         {\small \bfseries #3}
             \hfill
             {\footnotesize \faMapMarker ~ #6}
@@ -107,6 +114,7 @@
             {\small \bfseries {#4}}
             \newline
             {\small \bfseries \emph{#5}}
+        \end{flushleft}
         \end{minipage}
     }
 }
@@ -126,6 +134,7 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
+        \begin{flushleft}
         {\small \bfseries #3}
             \hfill
             {\footnotesize \faMapMarker ~ #6}
@@ -136,6 +145,7 @@
             \newline
             \small
             {\emph{#7}}
+        \end{flushleft}
         \end{minipage}
     }
 }
@@ -154,6 +164,7 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
+        \begin{flushleft}
         {\small \bfseries #2}
             \hfill
             {\footnotesize \faMapMarker ~ #5}
@@ -161,6 +172,7 @@
             {\small \bfseries #3}
             \newline
             {\small \bfseries \emph{#4}}
+        \end{flushleft}
         \end{minipage}
     }
 }
@@ -180,6 +192,7 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
+        \begin{flushleft}
         {\small \bfseries #2}
             \hfill
             {\footnotesize \faMapMarker ~ #5}
@@ -189,6 +202,7 @@
             {\small \bfseries \emph{#4}}
             \newline
             {\small \emph{#6}}
+        \end{flushleft}
         \end{minipage}
     }
 }
@@ -231,6 +245,7 @@
 \newcommand{\Affiliation}[2]{
 % input: organization, position, start_year, end_year
     \begin{minipage}{2.25 in}
+    \begin{flushleft}
     {\footnotesize \bfseries #1}
         \setlist[itemize]{
             wide=0 pt,
@@ -240,6 +255,7 @@
             leftmargin=5 pt
         }
         {\footnotesize #2}
+    \end{flushleft}
     \end{minipage}
 }
 
@@ -248,6 +264,7 @@
 % input: Organization, Seminar, Year
     \adjustbox{valign=t}{
         \begin{minipage}{5.05 in}
+        \begin{flushleft}
         {\footnotesize \bfseries #1}
             \setlist[itemize]{
                 wide=0 pt,
@@ -257,6 +274,7 @@
                 leftmargin=0 pt
             }
             {\footnotesize #2}
+        \end{flushleft}
         \end{minipage}
     }
 }
@@ -274,6 +292,7 @@
     \VertLine
     \adjustbox{valign=t}{
         \begin{minipage}{3.7 in}
+        \begin{flushleft}
             \setlist[itemize]{
                 wide=0 pt,
                 label={},
@@ -282,6 +301,7 @@
                 leftmargin=0 pt
             }
             {\scriptsize #2}
+        \end{flushleft}
         \end{minipage}
     }
 }
