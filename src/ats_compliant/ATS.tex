@@ -1,0 +1,102 @@
+%! Author = jordanwinemiller
+%! Date = 4/20/23
+
+% Preamble
+\documentclass[11 pt, letterpaper, sans]{moderncv}
+
+% Packages
+\RequirePackage[margin=0.75 in]{geometry}
+\RequirePackage{setspace}
+
+%% Uses 'ModernCV' for styles
+\moderncvstyle{casual}
+\moderncvcolor{blue}
+\moderncvicons{awesome}
+
+%% Character Encoding
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+
+%% Inprove text-only output
+\def\labelitemi{--} % Bullet list with a dash
+\RequirePackage{xpatch}
+\RequirePackage{accsupp}
+
+%% Patch cventry - Add linebreak before and separator: after
+\xpatchcmd{\cventry}{#2}{%
+  \protect\BeginAccSupp{%
+    method=pdfstringdef=true,ActualText=\unichar{"000A}#2:}%
+    #2\protect\EndAccSepp{}}
+{\typeout{===>Success in patching \\cventry}}
+{\typeout{===>Failure in patching \\cventry}}
+
+% Remove glyphs from text version and add description
+\renewcommand*{\linkedinsocialsymbol}{%
+\protect\BeginAccSupp{ActualText=}%
+{{\small\faLinkedinSquare}~}%
+\protect\EndAccSupp{}}%
+
+\renewcommand*{\fixedphonesymbol}{%
+\protect\BeginAccSupp{ActualText=Telephone:}%
+{{\faPhone}~}%
+\protect\EndAccSupp{}}%
+
+\renewcommand*{\emailsymbol}{%
+\protect\BeginAccSupp{ActualText=Email:}%
+{{\small\faEnvelopeO}~}%
+\protect\EndAccSupp{}}%
+
+% Define mySection, which removes symbols from text version
+\newcommand{\mySection}[2]{%
+\BeginAccSupp{method=pdfstringdef,ActualText=\unichar{'000A}#2:}%
+    \section{\texorpdfstring{#1~#2}{#2}}%
+\EndAccSupp{}%
+}
+
+\newcommand{\mycvitem}[1]{%
+  \BeginAccSupp{method=pdfstringdef,ActualText={\unichar{"000A}#1:}}%
+    \cvitem{}{\textbf{#1}}%
+  \EndAccSupp{}}
+
+%Redefine socials to add full link into text-version
+\RenewDocumentCommand{\social}{O{}O{}m}{%
+\ifthenelse{\equal{#2}{}}{%
+  \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}%
+    {\protect\BeginAccSupp{method=pdfstringdef,
+    ActualText={\protect\unichar{"000A}http://www.linkedin.com/in/#3%
+    \protect\unichar{"000A}}}%
+    \protect\httplink[#3]{www.linkedin.com/in/#3}\protect\EndAccSupp{}}}{}%
+  \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials}%
+    {\protect\BeginAccSupp{method=pdfstringdef,
+    ActualText=\protect\unichar{"000A}www.twitter.com/#3%
+    \protect\unichar{"000A}}}%
+    \protect\httplink[#3]{www.twitter.com/#3}\protect\EndAccSupp}}{}%
+  \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}%
+    {\protect\BeginAccSupp{method=pdfstingdef,
+    ActualText=\protect\unichar{"000A}www.github.com/#3%
+    \protect\unichar{"000A}}%
+    \protect\httplink[#3]{www.github.com/#3}\protect\EndAccSupp}}{}%
+}
+{\collectionadd[#1]{socials}{\protect\httplink[#3]{#2}}}
+
+%% Personal Data
+\firstname{Jordan}
+\familyname{Winemiller}
+%\phone{+1~(913)~620~7648}
+\email{jordanwinemiller@gmail.com}
+%\homepage{jmwinemiller.github.io}
+\social[linkedin]{jordan-winemiller}
+%\social[github]{jmwinemiller}
+
+
+% Document
+\begin{document}
+  \newpage
+  \makecvtitle
+  \onehalfspacing
+
+  \mySection{\faStar}{Summary}
+  \cvllistitem{I'm}
+
+\end{document}

@@ -1,0 +1,74 @@
+%% Packages for the template
+% Uses the 'geometry' package to set the margins of the page
+% Documentation at https://texdoc.org/serve/geometry.pdf/0
+\RequirePackage{geometry}
+\geometry{
+    paper=letterpaper,
+    left=0.5 in,
+    right=0.5 in,
+    top=0.5 in,
+    bottom=0.5 in
+}
+
+% Uses 'ModernCV' for styles
+\RequirePackage{moderncv}
+%\moderncvstyle[right]{classic}
+%\moderncvcolor{black}
+%\moderncvicons{awesome}
+
+% Uses the 'fontenc' package for fonts
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+
+% Uses the 'import' package for file imports
+\RequirePackage{import}
+
+% Uses the 'enumitem' package for custom lists
+\RequirePackage{enumitem}
+
+% Uses the 'tikz' package for advanced drawing
+%\RequirePackage{tikz}
+
+% Uses the 'ragged2e' package for text alignment
+\RequirePackage[document]{ragged2e}
+
+% Uses the 'amsmath' package for matrix layouts
+\RequirePackage{amsmath}
+
+% Uses the 'hyperref' package for hyperlink settings
+\RequirePackage[hidelinks]{hyperref}
+
+% Uses 'xcolor' package to define colors using Hex color codes
+% Documentation at https://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf
+\RequirePackage{color}
+\RequirePackage{xcolor}
+%\definecolor{titleBackColor}{HTML}{404040}
+%\definecolor{sideBarColor}{HTML}{999999}
+
+%% Format Setup
+\pagestyle{empty}
+\geometry{
+  paper=letterpaper,
+  left=0.5 in,
+  right=0.5 in,
+  top=0.5 in,
+  bottom=0.5 in
+}
+
+\setlength\parindent{9 pt}
+\setlist{nosep}
+
+\renewcommand*\familydefault{\sfdefault}
+
+%% Section Commands
+\newcommand{\Summary}[1]{
+  \begin{flushleft}
+    \normalsize {#1}
+  \end{flushleft}
+}
+
+% Info
+\title{ATS Resume Template}
+\date{05/05/2023}
+\author{Jordan Winemiller}

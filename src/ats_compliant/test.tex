@@ -1,0 +1,111 @@
+\documentclass[10pt,letterpaper,sans]{moderncv}
+
+%% Adjust the page margins
+\usepackage[margin=1.75cm]{geometry}
+\usepackage{setspace}
+
+%% ModernCV themes
+\moderncvstyle[right]{classic}
+\moderncvcolor{black}
+\moderncvicons{awesome}
+
+%% Character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%% Improve text-only output
+\def\labelitemi{--} % Bullet list with a dash
+\usepackage{xpatch}
+\usepackage{accsupp}
+
+% Patch cventry - Add linebreak before and separator: after
+\xpatchcmd{\cventry}{#2}{%
+  \protect\BeginAccSupp{%
+    method=pdfstringdef=true,ActualText=\unichar{"000A}#2:}%
+    #2\protect\EndAccSupp{}}%
+{\typeout{===>Success in patching \\cventry}}
+{\typeout{===>Failure in patching \\cventry}}
+
+% Remove glyphs from text version and add description
+\renewcommand*{\linkedinsocialsymbol}{%
+\protect\BeginAccSupp{ActualText=}%
+{{\small\faLinkedinSquare}~}%
+\protect\EndAccSupp{}}%
+
+\renewcommand*{\fixedphonesymbol}{%
+\protect\BeginAccSupp{ActualText=Telephone:}%
+{{\faPhone}~}%
+\protect\EndAccSupp{}}%
+
+\renewcommand*{\emailsymbol}{%
+\protect\BeginAccSupp{ActualText=Email:}%
+{{\small\faEnvelopeO}~}%
+\protect\EndAccSupp{}}%
+
+% Define mySection, which removes symbols from text version
+\newcommand{\mySection}[2]{%
+\BeginAccSupp{method=pdfstringdef,ActualText=\unichar{'000A}#2:}%
+    \section{\texorpdfstring{#1~#2}{#2}}%
+\EndAccSupp{}%
+}
+
+\newcommand{\mycvitem}[1]{%
+  \BeginAccSupp{method=pdfstringdef,ActualText={\unichar{"000A}#1:}}%
+    \cvitem{}{\textbf{#1}}%
+  \EndAccSupp{}}
+
+%Redefine socials to add full link into text-version
+\RenewDocumentCommand{\social}{O{}O{}m}{%
+\ifthenelse{\equal{#2}{}}{%
+  \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}%
+    {\protect\BeginAccSupp{method=pdfstringdef,
+    ActualText={\protect\unichar{"000A}http://www.linkedin.com/in/#3%
+    \protect\unichar{"000A}}}%
+    \protect\httplink[#3]{www.linkedin.com/in/#3}\protect\EndAccSupp{}}}{}%
+  \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials}%
+    {\protect\BeginAccSupp{method=pdfstringdef,
+    ActualText=\protect\unichar{"000A}www.twitter.com/#3%
+    \protect\unichar{"000A}}}%
+    \protect\httplink[#3]{www.twitter.com/#3}\protect\EndAccSupp}}{}%
+  \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}%
+    {\protect\BeginAccSupp{method=pdfstingdef,
+    ActualText=\protect\unichar{"000A}www.github.com/#3%
+    \protect\unichar{"000A}}%
+    \protect\httplink[#3]{www.github.com/#3}\protect\EndAccSupp}}{}%
+}
+{\collectionadd[#1]{socials}{\protect\httplink[#3]{#2}}}}
+
+%% Personal data
+\firstname{John}
+\familyname{Doe}
+\phone{+1~(555)~123~4567}
+\email{mickey@disney.com}
+\social[linkedin]{mickeymouse}
+
+\begin{document}
+
+% CURRICULUM VITAE
+\newpage
+\makecvtitle
+\onehalfspacing
+
+\mySection{\faStar}{Professional Summary}
+\cvlistitem{I'm a talking mouse, please hire me.}
+
+\mySection{\faIndustry}{Experience}
+\cventry{1940-present}{Cartoon character}{Walt Disney Company}{Animation Division}{}{}
+\cvlistitem{Many films, please hire me.}
+\cventry{1950-present}{Company Mascot}{Walt Disney}{Worldwide}{}{I Hate the Pixar Lamp}
+
+\mySection{\faGraduationCap}{Education}
+\cvlistitem{I can talk, please hire me.}
+
+\mySection{\faWrench}{Skills}
+\mycvitem{Languages}
+\cvlistitem{I can talk, please hire me.}
+
+\mySection{\faTrophy}{Awards}
+\cvlistitem{Many Oscars, please hire me.}
+
+\end{document}
